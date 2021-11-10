@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <section id="header">
+            <h1>SISTEMA VUELOS</h1>
+        </section>
+        
+    </header>
+    <nav>
+      
+
+          @Html.ActionLink("Home", "Index", "Home")
+
+          @Html.ActionLink("Vuelos", "Index", "Vuelo")
+
+
+    </nav>
+    <main>
+        <aside id="izq">
+            @if (IsSectionDefined("Izq"))
+            {
+                @RenderSection("Izq")
+            }
+            else
+            {
+               
+            }
+        </aside>
+        <article>
+            @RenderBody()
+        </article>
+       
+    </main>
+    <footer>Info@vuelo.com</footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿body {
+
+}
+
+#header {
+   
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align:center;
+    font-family:Calibri;
+    font-size:60px;
+}
+
+nav {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    font-family: Calibri;
+    font-size: 30px;
+}
+
+    nav:hover {
+        background-color: darkcyan;
+    }
+
+#izq {
+    background-color: black;
+    margin: 10px;
+    color: white;
+    padding: 250px;
+    float: left;
+    
+}
+
+article {
+    background-color: white;
+    float: left;
+    width:60%;
+    padding:6px;
+}
+
+footer {
+    clear: both;
+    background-color: black;
+    color:white;
+    text-align:center;
+    font-family:Calibri;
+}
+
+h2 {
+    text-align: center;
+}
