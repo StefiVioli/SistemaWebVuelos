@@ -103,6 +103,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VueloController.cs" />
     <Compile Include="Data\DbVueloContext.cs" />
+    <Compile Include="Data\VuelosInitializer.cs" />
+    <Compile Include="Filters\MyFilterAction.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -128,6 +130,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Vuelo\Detail.cshtml" />
     <Content Include="Views\Vuelo\Delete.cshtml" />
+    <Content Include="Views\Vuelo\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -137,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

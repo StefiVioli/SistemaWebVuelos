@@ -14,15 +14,14 @@
         </section>
         
     </header>
-    <nav>
-      
 
-          @Html.ActionLink("Home", "Index", "Home")
+        <nav id="topmenu">
+            <ul>
+                <li><a href="#"></a>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li><a href="#"></a>@Html.ActionLink("Vuelos", "Index", "Vuelo")</li>
+            </ul>
+        </nav>
 
-          @Html.ActionLink("Vuelos", "Index", "Vuelo")
-
-
-    </nav>
     <main>
         <aside id="izq">
             @if (IsSectionDefined("Izq"))
@@ -31,7 +30,8 @@
             }
             else
             {
-               
+               <img src="~/images/avion.jpg" />
+               <img src="~/images/avion2.jpg" />
             }
         </aside>
         <article>

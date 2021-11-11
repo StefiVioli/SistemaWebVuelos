@@ -5,16 +5,16 @@
     ViewBag.Title = "Index";
 }
 
+<div class="displaybuscar">
+    @using (Html.BeginForm("BuscarPorDestino", "Vuelo", FormMethod.Get))
+    {
+        @Html.TextBox("Destino", null)
 
-@using (Html.BeginForm("BuscarPorDestino", "Vuelo", FormMethod.Get))
-{
-    @Html.TextBox("Destino", null)
+        <input type="submit" value="Traer Por Destino" />
+    }
+</div>
 
-    <input type="submit" value="Traer Por Destino" />
-}
-
-
-<body>
+<body class="display">
     <p>@Html.ActionLink("Nuevo", "Create", "Vuelo")</p>
     <table>
         <tr>
@@ -39,9 +39,9 @@
                     @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
                 </td>
 
-                @*<td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
-                    </td>*@
+                <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id })
+                </td>
 
             </tr>
         }

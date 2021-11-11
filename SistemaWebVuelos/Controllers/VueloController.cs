@@ -1,13 +1,16 @@
 ﻿using SistemaWebVuelos.Data;
+using SistemaWebVuelos.Filters;
 using SistemaWebVuelos.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace SistemaWebVuelos.Controllers
 {
+    [MyFilterAction]
     public class VueloController : Controller
     {
 
@@ -107,6 +110,39 @@ namespace SistemaWebVuelos.Controllers
                                                 select v).ToList();
 
             return View("Index", vuelosDestino);
+
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            Vuelo vuelo = context.Vuelos.Find(id);
+
+            if (vuelo != null)
+            {
+                return View("Edit", vuelo);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+
+        }
+
+        [HttpPost]
+        [ActionName("Edit")]
+        public ActionResult EditConfirmed(Vuelo vuelo)
+            
+        {
+
+            if (ModelState.IsValid)
+            {
+                context.Entry(vuelo).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View("Edit", vuelo);
 
         }
     }
