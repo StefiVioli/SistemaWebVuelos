@@ -107,7 +107,7 @@ namespace SistemaWebVuelos.Controllers
         [HttpGet]
         public ActionResult BuscarPorDestino(string destino)
         {
-            if (destino == null || destino == "TODOS")
+            if (destino == "" || destino == "TODOS")
             {
                 return RedirectToAction("Index");
             }
